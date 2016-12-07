@@ -1,0 +1,77 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: Kindle
+description: Amazon.co.jpのKindleデータを操作する
+stability: prototype
+strictProperties: true
+type:
+  - object
+definitions:
+  id:
+    description: ASIN code (unique identifier)
+    readOnly: true
+    type:
+      - string
+    pattern: "^[0-9A-Z]{10}$"
+    example: B01N3PNATY
+  title:
+    description: unique name of kindle
+    readOnly: true
+    type:
+    - string
+  identity:
+    "$ref": "/schemata/kindle#/definitions/id"
+  created_at:
+    description: when kindle was created
+    format: date-time
+    type:
+    - string
+  updated_at:
+    description: when kindle was updated
+    format: date-time
+    type:
+    - string
+links:
+- description: Create a new kindle.
+  href: "/kindles"
+  method: POST
+  rel: create
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Create
+- description: Delete an existing kindle.
+  href: "/kindles/{(%2Fschemata%2Fkindle%23%2Fdefinitions%2Fidentity)}"
+  method: DELETE
+  rel: destroy
+  title: Delete
+- description: Info for existing kindle.
+  href: "/kindles/{(%2Fschemata%2Fkindle%23%2Fdefinitions%2Fidentity)}"
+  method: GET
+  rel: self
+  title: Info
+- description: List existing kindles.
+  href: "/kindles"
+  method: GET
+  rel: instances
+  title: List
+- description: Update an existing kindle.
+  href: "/kindles/{(%2Fschemata%2Fkindle%23%2Fdefinitions%2Fidentity)}"
+  method: PATCH
+  rel: update
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Update
+properties:
+  created_at:
+    "$ref": "/schemata/kindle#/definitions/created_at"
+  id:
+    "$ref": "/schemata/kindle#/definitions/id"
+  title:
+    "$ref": "/schemata/kindle#/definitions/title"
+  updated_at:
+    "$ref": "/schemata/kindle#/definitions/updated_at"
+id: schemata/kindle
