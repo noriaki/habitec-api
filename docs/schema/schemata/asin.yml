@@ -1,0 +1,78 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: FIXME - Asin
+description: FIXME
+stability: prototype
+strictProperties: true
+type:
+- object
+definitions:
+  id:
+    description: unique identifier of asin
+    readOnly: true
+    format: uuid
+    type:
+    - string
+  name:
+    description: unique name of asin
+    readOnly: true
+    type:
+    - string
+  identity:
+    anyOf:
+    - "$ref": "/schemata/asin#/definitions/id"
+    - "$ref": "/schemata/asin#/definitions/name"
+  created_at:
+    description: when asin was created
+    format: date-time
+    type:
+    - string
+  updated_at:
+    description: when asin was updated
+    format: date-time
+    type:
+    - string
+links:
+- description: Create a new asin.
+  href: "/asins"
+  method: POST
+  rel: create
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Create
+- description: Delete an existing asin.
+  href: "/asins/{(%2Fschemata%2Fasin%23%2Fdefinitions%2Fidentity)}"
+  method: DELETE
+  rel: destroy
+  title: Delete
+- description: Info for existing asin.
+  href: "/asins/{(%2Fschemata%2Fasin%23%2Fdefinitions%2Fidentity)}"
+  method: GET
+  rel: self
+  title: Info
+- description: List existing asins.
+  href: "/asins"
+  method: GET
+  rel: instances
+  title: List
+- description: Update an existing asin.
+  href: "/asins/{(%2Fschemata%2Fasin%23%2Fdefinitions%2Fidentity)}"
+  method: PATCH
+  rel: update
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Update
+properties:
+  created_at:
+    "$ref": "/schemata/asin#/definitions/created_at"
+  id:
+    "$ref": "/schemata/asin#/definitions/id"
+  name:
+    "$ref": "/schemata/asin#/definitions/name"
+  updated_at:
+    "$ref": "/schemata/asin#/definitions/updated_at"
+id: schemata/asin
