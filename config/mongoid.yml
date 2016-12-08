@@ -146,6 +146,6 @@ test:
 production:
   clients:
     default:
-      uri: <%= Rails.application.secrets.mongodb_uri %>
+      uri: <%= ENV["MONGODB_URI"] || Rails.application.secrets.mongodb_uri %>
       options:
         connect_timeout: 15
