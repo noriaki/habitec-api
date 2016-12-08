@@ -17,6 +17,7 @@ namespace :schema do
 
   Prmd::RakeTasks::Doc.new do |t|
     t.options[:prepend] = ["#{schema_root}/overview.md"]
+    t.options[:doc] = { toc: true }
     t.files = {
       "#{schema_root}/schema.json" => "#{schema_root}/schema.md",
       "#{schema_root}/schema.json" => File.expand_path("../README.md", schema_root),

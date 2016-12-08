@@ -35,5 +35,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mongoid', '~> 6'
-gem 'prmd'
+gem 'prmd', github: 'noriaki/prmd'
+gem 'jdoc'
 gem 'amazon-ecs', github: 'noriaki/amazon-ecs', require: 'amazon/ecs'
