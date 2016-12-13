@@ -1,18 +1,18 @@
 GIT
+  remote: git://github.com/interagent/prmd.git
+  revision: dd3b31605b09f9a1b3103ad608d9066e45deff21
+  specs:
+    prmd (0.13.0)
+      erubis (~> 2.7)
+      json_schema (~> 0.3, >= 0.3.1)
+
+GIT
   remote: git://github.com/noriaki/amazon-ecs.git
   revision: 50aadad66545902e7067966e4b53a6049f6a57d3
   specs:
     amazon-ecs (2.5.1)
       nokogiri (~> 1.4)
       ruby-hmac (~> 0.3)
-
-GIT
-  remote: git://github.com/noriaki/prmd.git
-  revision: 7546cde37c0d90e7043240ec521bf2fe26ebaadd
-  specs:
-    prmd (0.12.0)
-      erubis (~> 2.7)
-      json_schema (~> 0.3, >= 0.3.1)
 
 GEM
   remote: https://rubygems.org/
@@ -40,6 +40,10 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.10.3)
+      actionpack (>= 4.1, < 6)
+      activemodel (>= 4.1, < 6)
+      jsonapi (= 0.1.1.beta2)
     activejob (5.0.0.1)
       activesupport (= 5.0.0.1)
       globalid (>= 0.3.6)
@@ -89,7 +93,10 @@ GEM
       json_schema
       rack
       redcarpet
+    json (1.8.3)
     json_schema (0.15.0)
+    jsonapi (0.1.1.beta2)
+      json (~> 1.8)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -181,6 +188,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   amazon-ecs!
   byebug
   guard-bundler
