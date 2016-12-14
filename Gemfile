@@ -22,6 +22,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'prmd', git: 'https://github.com/interagent/prmd'
   gem 'rspec-rails', '~> 3.5'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do
