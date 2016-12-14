@@ -20,7 +20,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry-rails'
-  gem 'prmd', github: 'interagent/prmd'
+  gem 'prmd', git: 'https://github.com/interagent/prmd'
 end
 
 group :development do
@@ -36,5 +36,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mongoid', '~> 6'
-gem 'amazon-ecs', github: 'noriaki/amazon-ecs', require: 'amazon/ecs'
+gem 'amazon-ecs', git: 'https://github.com/noriaki/amazon-ecs', require: 'amazon/ecs'
 gem 'active_model_serializers'
