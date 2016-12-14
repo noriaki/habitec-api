@@ -28,5 +28,20 @@ module HabitecApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # JSON Schema
+    JSON.parse(File.read(Rails.root.join("docs/shcema/schema.json"))).tap {|schema|
+      config.middleware.insert_before(
+        ActionDispatch::ParamsParser,
+        Committee::Middleware::RequestValidation,
+        schema: schema, strict: true
+      )
+      config.middleware.insert_before(
+        ActionDispatch::ParamsParser,
+        Committee::Middleware::ResponseValidation,
+        schema: schema
+      )
+      config.middleware.use Committee::Middleware::Stub, schema: schema
+    }
   end
 end
