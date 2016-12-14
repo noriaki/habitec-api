@@ -153,13 +153,6 @@
       },
       "links": [
         {
-          "description": "Check existance for kindle.",
-          "href": "/kindles/{(%23%2Fdefinitions%2Fkindle%2Fdefinitions%2Fidentity)}",
-          "method": "HEAD",
-          "rel": "self",
-          "title": "Check existance"
-        },
-        {
           "description": "Info for existing kindle.",
           "href": "/kindles/{(%23%2Fdefinitions%2Fkindle%2Fdefinitions%2Fidentity)}",
           "method": "GET",

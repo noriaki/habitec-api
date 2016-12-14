@@ -5,7 +5,6 @@ In this schema file, we represents the public interface of Sample API in JSON Hy
 ## The table of contents
 
 - <a href="#resource-kindle">Kindle</a>
-  - <a href="#link-HEAD-kindle-/kindles/{(%23%2Fdefinitions%2Fkindle%2Fdefinitions%2Fidentity)}">HEAD /kindles/{kindle_id}</a>
   - <a href="#link-GET-kindle-/kindles/{(%23%2Fdefinitions%2Fkindle%2Fdefinitions%2Fidentity)}">GET /kindles/{kindle_id}</a>
   - <a href="#link-POST-kindle-/kindles">POST /kindles</a>
   - <a href="#link-PATCH-kindle-/kindles/{(%23%2Fdefinitions%2Fkindle%2Fdefinitions%2Fidentity)}">PATCH /kindles/{kindle_id}</a>
@@ -33,52 +32,6 @@ Amazon.co.jpのKindleデータを操作する
 | **title** | *string* | Title of kindle | `"バトルスタディーズ（８） (モーニングコミックス)"` |
 | **updated_at** | *date-time* | when kindle was updated | `"2015-01-01T12:00:00Z"` |
 | **url** | *uri* | Detail page URL of kindle - API DetailPageURL<br/> **pattern:** `^https://(www\.)?amazon\.co\.jp/o/ASIN/[0-9A-Z]{10}/habitec-22/?$` | `"https://www.amazon.co.jp/o/ASIN/B00EI2Y81I/habitec-22/"` |
-
-### <a name="link-HEAD-kindle-/kindles/{(%23%2Fdefinitions%2Fkindle%2Fdefinitions%2Fidentity)}">Kindle Check existance</a>
-
-Check existance for kindle.
-
-```
-HEAD /kindles/{kindle_id}
-```
-
-
-#### Curl Example
-
-```bash
-$ curl -n -X HEAD https://example.com/kindles/$KINDLE_ID \
-  -H "Content-Type: application/json"
-```
-
-
-#### Response Example
-
-```
-HTTP/1.1 200 OK
-```
-
-```json
-{
-  "id": "B01N3PNATY",
-  "title": "バトルスタディーズ（８） (モーニングコミックス)",
-  "authors": [
-    "メーブ",
-    "恵広史"
-  ],
-  "publisher": "講談社",
-  "url": "https://www.amazon.co.jp/o/ASIN/B00EI2Y81I/habitec-22/",
-  "images": {
-    "swatch": "https://images-fe.ssl-images-amazon.com/images/I/51ZcS0q0-BL._SL30_.jpg",
-    "small": "https://images-fe.ssl-images-amazon.com/images/I/51ZcS0q0-BL._SL75_.jpg",
-    "tiny": "https://images-fe.ssl-images-amazon.com/images/I/51ZcS0q0-BL._SL110_.jpg",
-    "medium": "https://images-fe.ssl-images-amazon.com/images/I/51ZcS0q0-BL._SL160_.jpg",
-    "large": "https://images-fe.ssl-images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu.gif"
-  },
-  "published_at": "2015-01-01T12:00:00Z",
-  "created_at": "2015-01-01T12:00:00Z",
-  "updated_at": "2015-01-01T12:00:00Z"
-}
-```
 
 ### <a name="link-GET-kindle-/kindles/{(%23%2Fdefinitions%2Fkindle%2Fdefinitions%2Fidentity)}">Kindle Info</a>
 
