@@ -21,6 +21,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'prmd', git: 'https://github.com/interagent/prmd'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
@@ -30,6 +31,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-bundler', require: false
   gem 'guard-rake'
+  gem 'guard-rspec', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
