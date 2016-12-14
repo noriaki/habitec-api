@@ -131,24 +131,27 @@
           "type": [
             "string"
           ],
-          "format": "date-time"
+          "pattern": "^[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$",
+          "example": "2015-01-01"
         },
         "identity": {
           "$ref": "#/definitions/kindle/definitions/id"
         },
         "created_at": {
           "description": "when kindle was created",
-          "format": "date-time",
           "type": [
             "string"
-          ]
+          ],
+          "pattern": "^[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$",
+          "example": "2015-01-01"
         },
         "updated_at": {
           "description": "when kindle was updated",
-          "format": "date-time",
           "type": [
             "string"
-          ]
+          ],
+          "pattern": "[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$",
+          "example": "2015-01-01"
         }
       },
       "links": [

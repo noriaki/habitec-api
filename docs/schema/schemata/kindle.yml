@@ -96,19 +96,22 @@ definitions:
     description: when kindle was released (API PublicationDate)
     type:
       - string
-    format: date-time
+    pattern: "^[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$"
+    example: 2015-01-01
   identity:
     "$ref": "/schemata/kindle#/definitions/id"
   created_at:
     description: when kindle was created
-    format: date-time
     type:
       - string
+    pattern: "^[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$"
+    example: 2015-01-01
   updated_at:
     description: when kindle was updated
-    format: date-time
     type:
       - string
+    pattern: "[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$"
+    example: 2015-01-01
 links:
 - description: Info for existing kindle.
   href: "/kindles/{(%2Fschemata%2Fkindle%23%2Fdefinitions%2Fidentity)}"
