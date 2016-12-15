@@ -104,14 +104,14 @@ definitions:
     description: when kindle was created
     type:
       - string
-    pattern: "^[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$"
-    example: 2015-01-01
+    format: date-time
+    example: "2015-01-01T00:00:00.000Z"
   updated_at:
     description: when kindle was updated
     type:
       - string
-    pattern: "[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$"
-    example: 2015-01-01
+    format: date-time
+    example: "2015-01-01T00:00:00.000Z"
 links:
 - description: Info for existing kindle.
   href: "/kindles/{(%2Fschemata%2Fkindle%23%2Fdefinitions%2Fidentity)}"

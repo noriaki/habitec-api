@@ -20,7 +20,7 @@ Amazon.co.jpのKindleデータを操作する
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
 | **authors** | *array* | Authors of kindle - API Author | `["メーブ","恵広史"]` |
-| **created_at** | *string* | when kindle was created<br/> **pattern:** `^[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$` | `"2015-01-01"` |
+| **created_at** | *date-time* | when kindle was created | `"2015-01-01T00:00:00.000Z"` |
 | **id** | *string* | ASIN code (unique identifier)<br/> **pattern:** `^[0-9A-Z]{10}$` | `"B01N3PNATY"` |
 | **images:large** | *uri* | Image (h500,w336) - API ImageSet/LargeImage/URL<br/> **pattern:** `^https://images-fe\.ssl-images-amazon\.com/images/.*?(no-image-no-ciu)?\.(gif|jpg)$` | `"https://images-fe.ssl-images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu.gif"` |
 | **images:medium** | *uri* | Image (h160,w108) - API ImageSet/MediumImage/URL<br/> **pattern:** `^https://images-fe\.ssl-images-amazon\.com/images/.*?(no-image-no-ciu)?\._SL160_\.(gif|jpg)$` | `"https://images-fe.ssl-images-amazon.com/images/I/51ZcS0q0-BL._SL160_.jpg"` |
@@ -30,7 +30,7 @@ Amazon.co.jpのKindleデータを操作する
 | **published_at** | *string* | when kindle was released (API PublicationDate)<br/> **pattern:** `^[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$` | `"2015-01-01"` |
 | **publisher** | *string* | Publisher of kindle - API Publisher | `"講談社"` |
 | **title** | *string* | Title of kindle | `"バトルスタディーズ（８） (モーニングコミックス)"` |
-| **updated_at** | *string* | when kindle was updated<br/> **pattern:** `[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$` | `"2015-01-01"` |
+| **updated_at** | *date-time* | when kindle was updated | `"2015-01-01T00:00:00.000Z"` |
 | **url** | *uri* | Detail page URL of kindle - API DetailPageURL<br/> **pattern:** `^https://(www\.)?amazon\.co\.jp/o/ASIN/[0-9A-Z]{10}/habitec-22/?$` | `"https://www.amazon.co.jp/o/ASIN/B00EI2Y81I/habitec-22/"` |
 
 ### <a name="link-GET-kindle-/kindles/{(%23%2Fdefinitions%2Fkindle%2Fdefinitions%2Fidentity)}">Kindle Info</a>
@@ -73,8 +73,8 @@ HTTP/1.1 200 OK
     "large": "https://images-fe.ssl-images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu.gif"
   },
   "published_at": "2015-01-01",
-  "created_at": "2015-01-01",
-  "updated_at": "2015-01-01"
+  "created_at": "2015-01-01T00:00:00.000Z",
+  "updated_at": "2015-01-01T00:00:00.000Z"
 }
 ```
 
@@ -129,8 +129,8 @@ HTTP/1.1 201 Created
     "large": "https://images-fe.ssl-images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu.gif"
   },
   "published_at": "2015-01-01",
-  "created_at": "2015-01-01",
-  "updated_at": "2015-01-01"
+  "created_at": "2015-01-01T00:00:00.000Z",
+  "updated_at": "2015-01-01T00:00:00.000Z"
 }
 ```
 
@@ -177,8 +177,8 @@ HTTP/1.1 200 OK
     "large": "https://images-fe.ssl-images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu.gif"
   },
   "published_at": "2015-01-01",
-  "created_at": "2015-01-01",
-  "updated_at": "2015-01-01"
+  "created_at": "2015-01-01T00:00:00.000Z",
+  "updated_at": "2015-01-01T00:00:00.000Z"
 }
 ```
 
