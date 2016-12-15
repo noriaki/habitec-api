@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/chocoken517/mongoid-rspec
+  revision: f6d6b6dd8e78c292a6607792afd4d89e6c9fc6ec
+  ref: f6d6b6d
+  specs:
+    mongoid-rspec (4.0.0)
+      mongoid (~> 6.0)
+      rake
+      rspec (~> 3.3)
+
+GIT
   remote: https://github.com/interagent/prmd
   revision: dd3b31605b09f9a1b3103ad608d9066e45deff21
   specs:
@@ -227,6 +237,7 @@ DEPENDENCIES
   guard-rspec
   listen (~> 3.0.5)
   mongoid (~> 6)
+  mongoid-rspec!
   prmd!
   pry-rails
   puma (~> 3.0)

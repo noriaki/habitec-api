@@ -23,6 +23,7 @@ group :development, :test do
   gem 'prmd', git: 'https://github.com/interagent/prmd'
   gem 'rspec-rails', '~> 3.5'
   gem "factory_girl_rails", "~> 4.0"
+  gem "mongoid-rspec", git: "https://github.com/chocoken517/mongoid-rspec", ref: "f6d6b6d"
 end
 
 group :test do
