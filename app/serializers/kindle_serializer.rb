@@ -1,3 +1,4 @@
 class KindleSerializer < ActiveModel::Serializer
-  attributes :id, :asin, :title, :publisher, :authors, :image_url, :publish_at
+  attribute :asin, key: :id
+  attributes :title, :publisher, :authors, :images, :published_at, :created_at, :updated_at, :url
 end

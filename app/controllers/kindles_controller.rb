@@ -1,21 +1,18 @@
 class KindlesController < ApplicationController
-  before_action :set_kindle, only: [:show, :update, :destroy]
+  before_action :set_kindle, only: [:show, :update]
 
-  # GET /kindles
-  def index
-    @kindles = Kindle.all
-
-    render json: @kindles
-  end
-
-  # GET /kindles/1
+  # GET /kindles/:ASIN
   def show
-    render json: @kindle
+    if @kindle.present?
+      render json: @kindle
+    else
+      render json: nil, status: :not_found
+    end
   end
 
   # POST /kindles
   def create
-    @kindle = Kindle.new(kindle_params)
+    @kindle = Kindle.new(asin: params[:id])
 
     if @kindle.save
       render json: @kindle, status: :created, location: @kindle
@@ -24,28 +21,27 @@ class KindlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /kindles/1
+  # PATCH /kindles/:ASIN
   def update
-    if @kindle.update(kindle_params)
-      render json: @kindle
+    if @kindle.fetch!
+      if @kindle.save
+        render json: @kindle
+      else
+        render json: @kindle.errors, status: :unprocessable_entity
+      end
     else
-      render json: @kindle.errors, status: :unprocessable_entity
+      render json: @kindle.errors
     end
-  end
-
-  # DELETE /kindles/1
-  def destroy
-    @kindle.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_kindle
-      @kindle = Kindle.find(params[:id])
+      @kindle = Kindle.find_by(asin: params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def kindle_params
-      params.require(:kindle).permit(:asin, :title, :publisher, :authors, :image_url, :publish_at)
+      params.require(:kindle)
     end
 end
