@@ -6,6 +6,6 @@ FactoryGirl.define do
     publisher "講談社"
     authors ["メーブ", "恵広史"]
     image_url "https://images-fe.ssl-images-amazon.com/images/I/51ZcS0q0-BL.jpg"
-    publish_at "2016-12-01"
+    published_at "2016-12-01"
   end
 end
