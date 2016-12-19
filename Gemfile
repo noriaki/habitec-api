@@ -20,6 +20,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry-rails'
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
   gem 'prmd', git: 'https://github.com/interagent/prmd'
   gem 'rspec-rails', '~> 3.5'
   gem "factory_girl_rails", "~> 4.0"
