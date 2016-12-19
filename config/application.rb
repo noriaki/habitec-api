@@ -31,16 +31,20 @@ module HabitecApi
 
     # JSON Schema
     JSON.parse(File.read(Rails.root.join("docs/schema/schema.json"))).tap {|schema|
-      config.middleware.insert_before(
-        ActionDispatch::Executor,
-        Committee::Middleware::RequestValidation,
-        schema: schema, strict: true
-      )
-      config.middleware.insert_before(
-        ActionDispatch::Executor,
-        Committee::Middleware::ResponseValidation,
-        schema: schema
-      )
+      config.middleware.use Committee::Middleware::RequestValidation,
+                            schema: schema, strict: true
+      config.middleware.use Committee::Middleware::ResponseValidation,
+                            schema: schema
+      #config.middleware.insert_before(
+      #  ActionDispatch::Executor,
+      #  Committee::Middleware::RequestValidation,
+      #  schema: schema, strict: true
+      #)
+      #config.middleware.insert_before(
+      #  ActionDispatch::Executor,
+      #  Committee::Middleware::ResponseValidation,
+      #  schema: schema
+      #)
       # config.middleware.use Committee::Middleware::Stub, schema: schema
     }
   end
