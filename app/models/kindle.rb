@@ -36,6 +36,10 @@ class Kindle
     [ base_uri, asin, associate_tag ].join("/")
   end
 
+  def incomplete?
+    %w(title publisher authors published_at).any? {|f| self[f.to_sym].blank? }
+  end
+
   private
   def build_image_url(label)
     labels = {

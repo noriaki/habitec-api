@@ -111,4 +111,36 @@ RSpec.describe Kindle, type: :model do
       expect(subject.url).to eq("#{base_uri}/#{subject.asin}/#{associate_tag}")
     end
   end
+
+  describe "#incomplete?" do
+    context "all attrs fill (except :image_url)" do
+      subject { build :kindle }
+
+      it "return false" do
+        expect(subject.incomplete?).to be false
+        subject.image_url = nil
+        expect(subject.incomplete?).to be false
+      end
+    end
+
+    context "any attr blank (except :image_url)" do
+      subject { Kindle.new }
+      let(:attrs) { attributes_for :kindle }
+
+      it "return true" do
+        subject.asin = attrs[:asin]
+        expect(subject.incomplete?).to be true
+        subject.image_url = attrs[:image_url]
+        expect(subject.incomplete?).to be true
+        subject.title = attrs[:title]
+        expect(subject.incomplete?).to be true
+        subject.publisher = attrs[:publisher]
+        expect(subject.incomplete?).to be true
+        subject.authors = attrs[:authors]
+        expect(subject.incomplete?).to be true
+        subject.published_at = attrs[:published_at]
+        expect(subject.incomplete?).to be false
+      end
+    end
+  end
 end
