@@ -23,14 +23,15 @@ class KindlesController < ApplicationController
 
   # PATCH /kindles/:ASIN
   def update
-    if @kindle.fetch!
-      if @kindle.save
+    if @kindle.present?
+      kindle_params = @kindle.fetch
+      if kindle_params.present? && @kindle.update(kindle_params)
         render json: @kindle
       else
         render json: @kindle.errors, status: :unprocessable_entity
       end
     else
-      render json: @kindle.errors
+      render json: nil, status: :not_found
     end
   end
 
@@ -38,10 +39,5 @@ class KindlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_kindle
       @kindle = Kindle.find_by(asin: params[:id])
-    end
-
-    # Only allow a trusted parameter "white list" through.
-    def kindle_params
-      params.require(:kindle)
     end
 end

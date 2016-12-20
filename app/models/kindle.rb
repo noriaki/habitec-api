@@ -36,6 +36,15 @@ class Kindle
     [ base_uri, asin, associate_tag ].join("/")
   end
 
+  def fetch
+    resource = KindleResource.new self
+    resource.fetch!
+    resource.to_param
+  rescue => e#KindleResource::RequestError => e
+    errors[:base] << e.message
+    false
+  end
+
   def incomplete?
     %w(title publisher authors published_at).any? {|f| self[f.to_sym].blank? }
   end
