@@ -27,7 +27,8 @@
           "description": "Title of kindle",
           "readOnly": true,
           "type": [
-            "string"
+            "string",
+            "null"
           ],
           "example": "バトルスタディーズ（８） (モーニングコミックス)"
         },
@@ -45,7 +46,8 @@
           "description": "Authors of kindle - API Author",
           "readOnly": true,
           "type": [
-            "array"
+            "array",
+            "null"
           ],
           "minItems": 1,
           "uniqueItems": true,
@@ -63,7 +65,8 @@
           "description": "Publisher of kindle - API Publisher",
           "readOnly": true,
           "type": [
-            "string"
+            "string",
+            "null"
           ],
           "example": "講談社"
         },
@@ -71,7 +74,8 @@
           "description": "Images of kindle",
           "readOnly": true,
           "type": [
-            "object"
+            "object",
+            "null"
           ],
           "properties": {
             "swatch": {
@@ -129,7 +133,8 @@
         "published_at": {
           "description": "when kindle was released (API PublicationDate)",
           "type": [
-            "string"
+            "string",
+            "null"
           ],
           "pattern": "^[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$",
           "example": "2015-01-01"

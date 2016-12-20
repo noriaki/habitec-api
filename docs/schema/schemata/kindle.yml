@@ -19,6 +19,7 @@ definitions:
     readOnly: true
     type:
       - string
+      - "null"
     example: バトルスタディーズ（８） (モーニングコミックス)
   url:
     description: Detail page URL of kindle - API DetailPageURL
@@ -33,6 +34,7 @@ definitions:
     readOnly: true
     type:
       - array
+      - "null"
     minItems: 1
     uniqueItems: true
     items:
@@ -45,12 +47,14 @@ definitions:
     readOnly: true
     type:
       - string
+      - "null"
     example: 講談社
   images:
     description: Images of kindle
     readOnly: true
     type:
       - object
+      - "null"
     properties:
       swatch:
         description: Image (h30,w20) - API ImageSet/SwatchImage/URL
@@ -96,6 +100,7 @@ definitions:
     description: when kindle was released (API PublicationDate)
     type:
       - string
+      - "null"
     pattern: "^[12][0-9]{3}-[0-1][0-9]-[0-3][0-9]$"
     example: 2015-01-01
   identity:
