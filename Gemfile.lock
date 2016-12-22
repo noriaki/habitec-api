@@ -284,6 +284,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mongoid (~> 6)
   mongoid-rspec!
+  nokogiri
   prmd!
   pry-rails
   puma (~> 3.0)
