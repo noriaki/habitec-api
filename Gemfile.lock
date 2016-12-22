@@ -1,3 +1,29 @@
+GIT
+  remote: https://github.com/chocoken517/mongoid-rspec
+  revision: f6d6b6dd8e78c292a6607792afd4d89e6c9fc6ec
+  ref: f6d6b6d
+  specs:
+    mongoid-rspec (4.0.0)
+      mongoid (~> 6.0)
+      rake
+      rspec (~> 3.3)
+
+GIT
+  remote: https://github.com/interagent/prmd
+  revision: dd3b31605b09f9a1b3103ad608d9066e45deff21
+  specs:
+    prmd (0.13.0)
+      erubis (~> 2.7)
+      json_schema (~> 0.3, >= 0.3.1)
+
+GIT
+  remote: https://github.com/noriaki/amazon-ecs
+  revision: 50aadad66545902e7067966e4b53a6049f6a57d3
+  specs:
+    amazon-ecs (2.5.1)
+      nokogiri (~> 1.4)
+      ruby-hmac (~> 0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,6 +50,10 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.10.3)
+      actionpack (>= 4.1, < 6)
+      activemodel (>= 4.1, < 6)
+      jsonapi (= 0.1.1.beta2)
     activejob (5.0.0.1)
       activesupport (= 5.0.0.1)
       globalid (>= 0.3.6)
@@ -43,8 +73,22 @@ GEM
     builder (3.2.2)
     byebug (9.0.6)
     coderay (1.1.1)
+    committee (1.15.0)
+      json_schema (~> 0.6, >= 0.6.1)
+      rack (>= 1.5)
     concurrent-ruby (1.0.2)
+    database_cleaner (1.5.3)
+    diff-lcs (1.2.5)
+    dotenv (2.1.1)
+    dotenv-rails (2.1.1)
+      dotenv (= 2.1.1)
+      railties (>= 4.0, < 5.1)
     erubis (2.7.0)
+    factory_girl (4.7.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.7.0)
+      factory_girl (~> 4.7.0)
+      railties (>= 3.0.0)
     ffi (1.9.14)
     formatador (0.2.5)
     globalid (0.3.7)
@@ -66,7 +110,15 @@ GEM
     guard-rake (1.0.0)
       guard
       rake
+    guard-rspec (4.7.3)
+      guard (~> 2.1)
+      guard-compat (~> 1.1)
+      rspec (>= 2.99.0, < 4.0)
     i18n (0.7.0)
+    json (1.8.3)
+    json_schema (0.16.0)
+    jsonapi (0.1.1.beta2)
+      json (~> 1.8)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -130,6 +182,28 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-rails (3.5.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
+    ruby-hmac (0.4.0)
     shellany (0.0.1)
     slop (3.6.0)
     spring (2.0.0)
@@ -156,14 +230,24 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
+  amazon-ecs!
   byebug
+  committee
+  database_cleaner
+  dotenv-rails
+  factory_girl_rails (~> 4.0)
   guard-bundler
   guard-rake
+  guard-rspec
   listen (~> 3.0.5)
   mongoid (~> 6)
+  mongoid-rspec!
+  prmd!
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rspec-rails (~> 3.5)
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
