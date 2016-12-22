@@ -40,6 +40,8 @@ group :development do
   gem 'guard-rake'
   gem 'guard-rspec', require: false
   gem 'version_bumper'
+  gem 'travis'
+  gem 'travis-lint'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
