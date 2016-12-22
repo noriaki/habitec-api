@@ -18,7 +18,8 @@ GIT
 
 GIT
   remote: https://github.com/noriaki/amazon-ecs
-  revision: 50aadad66545902e7067966e4b53a6049f6a57d3
+  revision: 3c9e6873328fff6f5244d1c084ff428ce14d5054
+  ref: 3c9e687
   specs:
     amazon-ecs (2.5.1)
       nokogiri (~> 1.4)

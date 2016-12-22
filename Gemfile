@@ -48,6 +48,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mongoid', '~> 6'
-gem 'amazon-ecs', git: 'https://github.com/noriaki/amazon-ecs', require: 'amazon/ecs'
+gem 'amazon-ecs', git: 'https://github.com/noriaki/amazon-ecs', ref: "3c9e687", require: 'amazon/ecs'
 gem 'active_model_serializers'
 gem "committee"
