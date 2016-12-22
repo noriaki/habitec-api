@@ -25,6 +25,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem "factory_girl_rails", "~> 4.0"
   gem "mongoid-rspec", git: "https://github.com/chocoken517/mongoid-rspec", ref: "f6d6b6d"
+  gem 'version_bumper'
 end
 
 group :test do
@@ -39,13 +40,14 @@ group :development do
   gem 'guard-bundler', require: false
   gem 'guard-rake'
   gem 'guard-rspec', require: false
-  gem 'version_bumper'
+  gem 'travis'
+  gem 'travis-lint'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mongoid', '~> 6'
-gem 'amazon-ecs', git: 'https://github.com/noriaki/amazon-ecs', require: 'amazon/ecs'
+gem 'amazon-ecs', require: 'amazon/ecs'
 gem 'active_model_serializers'
 gem "committee"
