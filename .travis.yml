@@ -19,10 +19,7 @@ before_install:
 bundler_args: --jobs=2 --without development staging production
 
 before_script:
-  - /bin/mv $TRAVIS_BUILD_DIR/config/secrets.travis.yml $TRAVIS_BUILD_DIR/config/secrets.yml
-
-env:
-  SECRET_KEY_BASE="$(bundle exec rake secret)"
+  - cp config/secrets.travis.yml config/secrets.yml
 
 script: "bundle exec rake spec"
 
